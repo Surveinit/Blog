@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # All articles
   get("/articles", to: "articles#index")
 
-  resources(:articles)
+  resources :articles do
+    resources :comments
+  end
   # Single article
   # get "/articles/:id", to: "articles#show"
 
