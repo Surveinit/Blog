@@ -4,3 +4,8 @@
 <%= link_to edit_article_path(@article), class: "btn" do %>
   <button type="button">Edit article</button>
 <% end %>
+
+<li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "You are going to delete #{@article.title}?"
+                  } %></li>
